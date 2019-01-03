@@ -33,3 +33,36 @@ Here are the available commands:
 --draw_target
     after a mask is applied, this will draw a circle around the largest blob in the masked image
 ```
+
+## Examples
+
+Resizing an image
+
+```
+python3 main.py --resize 320 240 --show "Resized image"
+```
+
+Blurring and smoothing an image
+```
+python3 main.py --resize 320 240 --blur 0.7 --smooth --show "Blurred and smoothed image"
+```
+
+Converting to HSV and masking an image
+```
+python3 main.py --resize 320 240 --hsv --mask 60 40 40 90 255 255 --bgr --show "Masked image"
+```
+
+Converting to HSV, masking an image, and drawing a target
+```
+python3 main.py --resize 320 240 --hsv --mask 60 40 40 90 255 255 --draw_target --bgr --show "Masked image"
+```
+
+Converting to HSV, masking an image, smoothing an image, blurring an image, and drawing a target
+```
+python3 main.py --resize 320 240 --hsv --mask 60 40 40 90 255 255 --smooth --blur 0.2 --draw_target --bgr --show "Masked image"
+```
+
+Showing the original image, converting to HSV, masking an image, smoothing an image, blurring an image, and drawing a target
+```
+python3 main.py --resize 320 240 --show "Original image" --hsv --mask 60 40 40 90 255 255 --smooth --blur 0.2 --draw_target --bgr --show "Masked image"
+```
