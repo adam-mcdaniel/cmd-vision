@@ -52,14 +52,11 @@ class CMD_Image(Image):
         return self
 
 
-# python main.py --show "original" --hsv --mask 27 100 100 40 255 255 --blur 1 --draw_target --bgr --show "output"
 def parse(image):
     n = 0
     while True:
         if n >= len(cmd):
             break
-
-        # print("current token:", cmd[n])
 
         if cmd[n] == "--mask":
             image.mask(
@@ -98,6 +95,7 @@ while True:
     result = parse(
         CMD_Image(raw).resize((340, 240))
         )
+    
     print(result)
 
     if escape_key_pressed():
