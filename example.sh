@@ -1,4 +1,4 @@
-
-python3 main.py --show "original" --hsv \
-    --mask 27 100 100 40 255 255 \
-    --blur 1 --draw_target --bgr --show "output"
+python3 main.py --resize 640 480 --show "Raw Camera Data" --hsv \
+    --mask 60 40 40 90 255 255 \
+    --smooth --blur 1.0 --draw_target \
+    --bgr --show "Output"

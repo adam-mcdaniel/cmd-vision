@@ -68,6 +68,11 @@ def parse(image):
                 int(cmd[n+6])
                 )
             n += 6
+        elif cmd[n] == "--resize":
+            image.resize(
+                (int(cmd[n+1]), int(cmd[n+2]))
+                )
+            n += 2
         elif cmd[n] == "--show":
             image.show(cmd[n+1])
             n += 1
@@ -93,7 +98,7 @@ cap = cv2.VideoCapture(0)
 while True:
     _, raw = cap.read()
     result = parse(
-        CMD_Image(raw).resize((340, 240))
+        CMD_Image(raw)
         )
     
     print(result)
