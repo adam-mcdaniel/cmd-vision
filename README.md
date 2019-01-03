@@ -21,9 +21,6 @@ Here are the available commands:
 --blur PERCENTAGE
     blurs PERCENTAGE percent
 
---blur PERCENTAGE
-    blurs PERCENTAGE percent
-
 --bgr
     converts current image to BGR format
 
