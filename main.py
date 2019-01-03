@@ -3,7 +3,6 @@ import cv2, time
 from small_vision import *
 
 cmd = sys.argv[1:]
-print(cmd)
 
 
 class CMD_Image(Image):
@@ -40,6 +39,7 @@ class CMD_Image(Image):
                 self.data,
                 cv2.COLOR_BGR2HSV
             )
+        self.image_type = "HSV"
         return self
 
     def convert_to_bgr(self):
@@ -48,6 +48,7 @@ class CMD_Image(Image):
                 self.data,
                 cv2.COLOR_HSV2BGR
             )
+        self.image_type = "BGR"
         return self
 
 
@@ -73,6 +74,8 @@ def parse(image):
         elif cmd[n] == "--show":
             image.show(cmd[n+1])
             n += 1
+        elif cmd[n] == "--smooth":
+            image.smooth()
         elif cmd[n] == "--draw_target":
             image.draw_target()
         elif cmd[n] == "--blur":
